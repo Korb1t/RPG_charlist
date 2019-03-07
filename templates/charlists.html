@@ -10,56 +10,29 @@
 <div class="container">
     <div class="player-list">
         <ul>
-            <li>Froik</li>
-            <li>Eadlas</li>
+            {% for char in chars %}
+            <li onclick="loadDoc({{ char.id }})">{{ char.name }}</li>
+            {%  endfor %}
         </ul>
     </div>
     <div class="chars">
-        <div class="stats">
-            <table class="stat-table">
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Melee</td>
-                    <td></td>
-                </tr>
-            </table>
+        <div class="stats" id="stats">
+
         </div>
     </div>
 </div>
+
+<script>
+    function loadDoc(n) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("stats").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/stat_table/" + n, true);
+        xhttp.send();
+    }
+</script>
 </body>
 </html>

@@ -20,4 +20,5 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('char_list', views.char_list, name='char_list'),
+    path('stat_table/<id>', views.stat_table, name='stat_table'),
 ]

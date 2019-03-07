@@ -16,8 +16,8 @@ class Char(models.Model):
     Strength = models.IntegerField()
     Agility = models.IntegerField()
     Intelligence = models.IntegerField()
-    Toughness = models.IntegerField()
     Perception = models.IntegerField()
+    Toughness = models.IntegerField()
     Fellowship = models.IntegerField()
     FatePoints = models.IntegerField()
 

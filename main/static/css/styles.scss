@@ -9,6 +9,7 @@ body{
 .container{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
 
     .player-list{
         ul{
@@ -37,7 +38,7 @@ body{
 .stat-table{
     tr{
         td{
-            background-color: #555555;
+            background-color: white;
             font-size: 2em;
         }
     }
