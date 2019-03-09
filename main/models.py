@@ -21,6 +21,17 @@ class Char(models.Model):
     Fellowship = models.IntegerField()
     FatePoints = models.IntegerField()
 
+    Melee_bonus = models.IntegerField(default=0)
+    Range_bonus = models.IntegerField(default=0)
+    WillPower_bonus = models.IntegerField(default=0)
+    Strength_bonus = models.IntegerField(default=0)
+    Agility_bonus = models.IntegerField(default=0)
+    Intelligence_bonus = models.IntegerField(default=0)
+    Perception_bonus = models.IntegerField(default=0)
+    Toughness_bonus = models.IntegerField(default=0)
+    Fellowship_bonus = models.IntegerField(default=0)
+    CurrentFP = models.IntegerField(default=0)
+
     def __str__(self):
         return self.name
 

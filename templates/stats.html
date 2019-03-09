@@ -1,42 +1,55 @@
+<h2>Stats<a onclick="editStats({{ char.id }})"><i class="fas fa-pencil-alt"></i></a></h2>
 <table class="stat-table">
     <tr>
         <td>Melee Skill</td>
         <td>{{ char.Melee }}</td>
+        <td>+{{ char.Melee_bonus }}</td>
+        {% if edit %}
+        {% endif %}
     </tr>
     <tr>
         <td>Balistic</td>
         <td>{{ char.Range }}</td>
+        <td>+{{ char.Range_bonus  }}</td>
     </tr>
     <tr>
         <td>Will Power</td>
         <td>{{ char.WillPower }}</td>
+        <td>+{{ char.WillPower_bonus  }}</td>
     </tr>
     <tr>
         <td>Strength</td>
         <td>{{ char.Strength }}</td>
+        <td>+{{ char.Strength_bonus }}</td>
     </tr>
     <tr>
         <td>Agility</td>
         <td>{{ char.Agility }}</td>
+        <td>+{{ char.Agility_bonus  }}</td>
     </tr>
     <tr>
         <td>Intelligence</td>
         <td>{{ char.Intelligence }}</td>
+        <td>+{{ char.Intelligence_bonus  }}</td>
     </tr>
     <tr>
         <td>Perception</td>
         <td>{{ char.Perception }}</td>
+        <td>+{{ char.Perception_bonus  }}</td>
     </tr>
     <tr>
         <td>Toughness</td>
         <td>{{ char.Toughness }}</td>
+        <td>+{{ char.Toughness_bonus  }}</td>
     </tr>
     <tr>
         <td>Fellowship</td>
         <td>{{ char.Fellowship }}</td>
+        <td>+{{ char.Fellowship_bonus  }}</td>
     </tr>
     <tr>
         <td>Fate Points</td>
-        <td>{{ char.FatePoints }}</td>
+        <td>{{ char.CurrentFP }}/{{ char.FatePoints }}</td>
+        <td>+/-</td>
     </tr>
 </table>

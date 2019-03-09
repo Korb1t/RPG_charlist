@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Title</title>
 </head>
 <body>
@@ -11,26 +13,35 @@
     <div class="player-list">
         <ul>
             {% for char in chars %}
-            <li onclick="loadDoc({{ char.id }})">{{ char.name }}</li>
-            {%  endfor %}
+                <li onclick="loadStats({{ char.id }})">{{ char.name }}</li>
+            {% endfor %}
         </ul>
     </div>
     <div class="chars">
-        <div class="stats" id="stats">
-
-        </div>
+        <div class="stats" id="stats"></div>
     </div>
 </div>
 
 <script>
-    function loadDoc(n) {
+    function loadStats(n) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("stats").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/stat_table/" + n, true);
+        xhttp.open("GET", "/stat_table/" + n + '?edit=False', true);
+        xhttp.send();
+    }
+
+    function editStats(n) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("stats").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/edit_stat_table/" + n + '?edit=True', true);
         xhttp.send();
     }
 </script>
