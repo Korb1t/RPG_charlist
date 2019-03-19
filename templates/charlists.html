@@ -9,7 +9,8 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container">
+<input type="checkbox" id="player-list-check" hidden>
+<label id="player-list-check-button" for="player-list-check" class="icon green"><i class="fas fa-bars"></i></label>
     <div class="player-list">
         <ul>
             {% for char in chars %}
@@ -17,9 +18,19 @@
             {% endfor %}
         </ul>
     </div>
+
     <div class="chars">
         <div class="stats" id="stats"></div>
     </div>
+<input id="option-panel-check" type="checkbox" hidden>
+<label for="option-panel-check" class="icon option-panel-toggle"><i class="fas fa-cog"></i></label>
+<div class="option-panel">
+<ul>
+    <li><div class="icon blue"><i class="fas fa-edit"></i></div><span class="tooltip">Edit</span></li>
+    <li><div class="icon blue"><i class="fas fa-edit"></i></div><span class="tooltip">Edit</span></li>
+    <li><div class="icon blue"><i class="fas fa-edit"></i></div><span class="tooltip">Edit</span></li>
+</ul>
+
 </div>
 
 <script>
@@ -30,18 +41,7 @@
                 document.getElementById("stats").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/stat_table/" + n + '?edit=False', true);
-        xhttp.send();
-    }
-
-    function editStats(n) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("stats").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/edit_stat_table/" + n + '?edit=True', true);
+        xhttp.open("GET", "/stat_table/" + n, true);
         xhttp.send();
     }
 </script>

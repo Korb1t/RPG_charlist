@@ -15,12 +15,11 @@ def char_list(request):
     return render(request, 'charlists.html', ctx)
 
 
-def stat_table(request, id, edit):
+def stat_table(request, id):
     char = Char.objects.filter(pk=id)[0]
 
     ctx = {
         'char': char,
-        'edit': edit,
     }
 
     return render(request, 'stats.html', ctx)
