@@ -70,6 +70,24 @@ a {
   background-color: white;
   font-size: 2em;
   border: black 1px solid;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.stat-table input {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font-size: 1em;
+  color: black;
+  width: 2em;
+  background: #999999;
+}
+.stat-table input:disabled {
+  background-color: white;
 }
 
 .icon {

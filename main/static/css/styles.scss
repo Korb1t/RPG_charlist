@@ -25,11 +25,11 @@ a {
     padding-top: 3em;
     padding-left: 2em;
     width: 22em;
-    background-color: rgba(#dddddd,1);
+    background-color: rgba(#dddddd, 1);
     //height: 96%;
-    margin:0;
+    margin: 0;
     position: fixed;
-    left:-26em;
+    left: -26em;
 
     transition: left;
     transition-duration: .3s;
@@ -38,9 +38,9 @@ a {
     border: 1px black solid;
 
     ul {
-        margin:0;
+        margin: 0;
         padding: 5%;
-        width:90%;
+        width: 90%;
 
         li {
             display: block;
@@ -60,13 +60,13 @@ a {
     }
 }
 
-#player-list-check-button{
+#player-list-check-button {
     position: fixed;
     top: 0.4em;
     left: 0.4em;
 }
 
-#player-list-check:checked ~ .player-list{
+#player-list-check:checked ~ .player-list {
     left: -2em;
 }
 
@@ -84,6 +84,26 @@ a {
             background-color: white;
             font-size: 2em;
             border: black 1px solid;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
+    }
+
+    input {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        display: inline-block;
+        white-space: normal;
+        background: none;
+        line-height: 1;
+        font-size: 1em;
+        color: black;
+        width: 2em;
+        background: #999999;
+
+        &:disabled{
+            background-color: white;
         }
     }
 }

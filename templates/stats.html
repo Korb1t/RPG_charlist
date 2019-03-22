@@ -2,8 +2,8 @@
 <table class="stat-table">
     <tr>
         <td>Melee Skill</td>
-        <td>{{ char.Melee }}</td>
-        <td>+{{ char.Melee_bonus }}</td>
+        <td><input disabled value="{{ char.Melee }}" type="text"></td>
+        <td>+<input disabled value="{{ char.Melee_bonus }}" type="text"></td>
         {% if edit %}
         {% endif %}
     </tr>
