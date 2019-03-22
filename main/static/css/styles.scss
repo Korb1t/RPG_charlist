@@ -72,7 +72,7 @@ a {
 
 .chars {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     padding: 2em;
 }
@@ -86,6 +86,13 @@ a {
             border: black 1px solid;
             width: -moz-fit-content;
             width: fit-content;
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center
+            }
         }
     }
 
@@ -99,11 +106,32 @@ a {
         line-height: 1;
         font-size: 1em;
         color: black;
-        width: 2em;
+        width: 1.5em;
         background: #999999;
 
-        &:disabled{
+        &:disabled {
             background-color: white;
+        }
+    }
+}
+
+.abilities-table {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .ability {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0.2em;
+        height: auto;
+
+        hr {
+            border-top: 1px solid #8c8b8b;
+            border-bottom: 1px solid #fff;
+        }
+
+        .ability-name {
+            font-size: 1.5em;
         }
     }
 }

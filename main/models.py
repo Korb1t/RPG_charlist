@@ -36,5 +36,21 @@ class Char(models.Model):
         return self.name
 
 
+class Ability(models.Model):
+    name = models.CharField(max_length=64)
+    stat = models.CharField(max_length=3)
+    description = models.CharField(max_length=300, blank=True, default='')
+    owner = models.ForeignKey(Char, on_delete=models.CASCADE)
+
+
+class Item(models.Model):
+    name = models.CharField(max_length=64)
+    description = models.CharField(max_length=300, blank=True, default='')
+    type = models.CharField(max_length=32)
+    isStackable = models.BooleanField()
+    isWeapon = models.BooleanField()
+    owner = models.ForeignKey(Char, on_delete=models.CASCADE)
+
+
 class Session(models.Model):
     name = models.CharField(max_length=32, blank=False)

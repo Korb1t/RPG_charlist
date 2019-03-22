@@ -1,52 +1,12 @@
 <h2>Stats</h2>
 <table class="stat-table">
+    {% for name, stat, bonus in stats %}
     <tr>
-        <td>Melee Skill</td>
-        <td><input disabled value="{{ char.Melee }}" type="text"></td>
-        <td>+<input disabled value="{{ char.Melee_bonus }}" type="text"></td>
-        {% if edit %}
-        {% endif %}
+        <td>{{ name }}</td>
+        <td><input disabled value="{{ stat }}" type="text"></td>
+        <td><div class="row"><label>+</label><input disabled value="{{ bonus }}" type="text"></div></td>
     </tr>
-    <tr>
-        <td>Balistic</td>
-        <td>{{ char.Range }}</td>
-        <td>+{{ char.Range_bonus  }}</td>
-    </tr>
-    <tr>
-        <td>Will Power</td>
-        <td>{{ char.WillPower }}</td>
-        <td>+{{ char.WillPower_bonus  }}</td>
-    </tr>
-    <tr>
-        <td>Strength</td>
-        <td>{{ char.Strength }}</td>
-        <td>+{{ char.Strength_bonus }}</td>
-    </tr>
-    <tr>
-        <td>Agility</td>
-        <td>{{ char.Agility }}</td>
-        <td>+{{ char.Agility_bonus  }}</td>
-    </tr>
-    <tr>
-        <td>Intelligence</td>
-        <td>{{ char.Intelligence }}</td>
-        <td>+{{ char.Intelligence_bonus  }}</td>
-    </tr>
-    <tr>
-        <td>Perception</td>
-        <td>{{ char.Perception }}</td>
-        <td>+{{ char.Perception_bonus  }}</td>
-    </tr>
-    <tr>
-        <td>Toughness</td>
-        <td>{{ char.Toughness }}</td>
-        <td>+{{ char.Toughness_bonus  }}</td>
-    </tr>
-    <tr>
-        <td>Fellowship</td>
-        <td>{{ char.Fellowship }}</td>
-        <td>+{{ char.Fellowship_bonus  }}</td>
-    </tr>
+    {% endfor %}
     <tr>
         <td>Fate Points</td>
         <td>{{ char.CurrentFP }}/{{ char.FatePoints }}</td>
